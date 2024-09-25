@@ -1,0 +1,13 @@
+{
+    "menu":{
+        "inicio":"home",
+        "s":""
+    },
+    "home":{
+        "nombre_hotel": "hotel buenas vistas"
+    },
+    "login":{
+        "iniciar_sesion":"Login",
+        "Contrasena":"Password"
+    }
+}
