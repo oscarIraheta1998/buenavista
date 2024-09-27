@@ -1,3 +1,4 @@
+import 'package:buenavista/system/globalVar.dart';
 import 'package:buenavista/widget/listTile.dart';
 import 'package:flutter/material.dart';
 class Navbar extends StatelessWidget {
@@ -6,12 +7,13 @@ class Navbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: MyColor.primariColor,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text("User Prueva"),
-            accountEmail: Text("User123Prueva@gmail.com"),
+            accountName: const Text("User Prueva"),
+            accountEmail: const Text("User123Prueva@gmail.com"),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.network(
@@ -22,7 +24,7 @@ class Navbar extends StatelessWidget {
                 ),
               ),
             ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.blue,
               image: DecorationImage(
                 image: NetworkImage(
@@ -33,13 +35,9 @@ class Navbar extends StatelessWidget {
             ),
           ),
           ///////lista del menu////////
-          listTile("home", Icon(Icons.home), "/",),
-          listTile("historial", Icon(Icons.flight), "",),
-          listTile("Pages02", Icon(Icons.favorite), "",),
-          listTile("Pages03", Icon(Icons.favorite), "",),
-          listTile("Pages04", Icon(Icons.favorite), "",),
-          listTile("Pages05", Icon(Icons.favorite), "",),
-          listTile("settings", Icon(Icons.settings), "",),
+          listTile(context, "home",MyColor.sextoColor, const Icon(Icons.home, color: MyColor.sextoColor,),  "/",),
+          listTile(context, "historial",MyColor.sextoColor, const Icon(Icons.flight, color: MyColor.sextoColor,), "",),
+          listTile(context, "Registar",MyColor.sextoColor, const Icon(Icons.login, color: MyColor.sextoColor,), "/Login",),
           ///////fin lista del menu/////////
         ],
       ),

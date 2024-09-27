@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 Widget header(BuildContext context){
   double screenHeigth = MediaQuery.of(context).size.height;
+  bool web(BuildContext context) => MediaQuery.of(context).size.width>=MyZize.isWeb;
   double H = screenHeigth-(screenHeigth/4);
   return Stack(
     children: <Widget>[
@@ -16,24 +17,60 @@ Widget header(BuildContext context){
           ),
         ),
       ),
-      Container(
-        height: H,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [MyColor.background,Colors.transparent],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            stops: [0,0.3]
-          )
-        ),
-        child: nombre_hotel(context),
-      ),
+      web(context) ? webHeader(context, H) : nombre_hotel(context,)
     ] 
   );
 }
 
+Widget webHeader(BuildContext context, double H){
+  return Stack(
+    children: <Widget>[
+      Container(
+        height: H,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color.fromARGB(234, 0, 0, 0),Colors.transparent],
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            stops: [0.5,5]
+          )
+        ),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              flex: 5,
+              child: Padding(
+                padding: EdgeInsets.all(20),
+                child: Center(
+                  child: nombre_hotel(context),
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 5,
+              child: Container()
+            )
+          ],
+        ),
+      ),
+      effect_fading(H),
+    ],
+  );
+}
 
-
+Widget effect_fading(double H){
+  return Container(
+    height: H,
+    decoration: const BoxDecoration(
+      gradient: LinearGradient(
+        colors: [MyColor.background,Colors.transparent],
+        begin: Alignment.bottomCenter,
+        end: Alignment.topCenter,
+        stops: [0,0.3]
+      )
+    ),
+  );
+}
 Widget nombre_hotel(BuildContext context) {
   return Center(
     child: Stack(
@@ -54,7 +91,7 @@ Widget nombre_hotel(BuildContext context) {
           S.of(context).nombre_hotel,
           style: const TextStyle(
             fontSize: 40,
-            color: MyColor.blanco,
+            color: MyColor.sextoColor,
           ),
         ),
       ],

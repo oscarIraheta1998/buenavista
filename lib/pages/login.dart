@@ -1,7 +1,7 @@
 import 'package:buenavista/system/globalVar.dart';
-import 'package:buenavista/widget/form.dart';
-import 'package:buenavista/widget/multiplataformas/login.dart';
+import 'package:buenavista/widget/layout/login.dart';
 import 'package:buenavista/widget/navBar.dart';
+import 'package:buenavista/widget/widgetForm.dart';
 import 'package:flutter/material.dart';
 
 import '../generated/l10n.dart';

@@ -7,9 +7,9 @@ class MyColor{
   static const Color trecerColor=Color(0XFFB0CEE2);
   static const Color cuartoColor=Color(0XFFA63E1B);
   static const Color quintoColor=Color(0XFFE95D2C);
-  static const Color blanco=Color.fromARGB(255, 255, 255, 255);
+  static const Color sextoColor=Color.fromARGB(255, 255, 255, 255);
 }
 
 class MyZize{
-
+  static double isWeb=800.0;
 }

@@ -18,7 +18,7 @@ Widget textFormField(_controller, String _labelText, _keyboardType, _maxLength, 
         borderSide: BorderSide(color: ColorTextFromFiel),
       ),
       focusedBorder: const UnderlineInputBorder(
-        borderSide: BorderSide(color: Colors.white70), //  when the TextFormField in focused 
+        borderSide: BorderSide(color: Colors.white70),
       ),
     ),
     keyboardType: _keyboardType,

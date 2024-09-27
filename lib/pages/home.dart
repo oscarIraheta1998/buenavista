@@ -1,6 +1,6 @@
 import 'package:buenavista/system/globalVar.dart';
-import 'package:buenavista/widget/multiplataformas/header.dart';
-import 'package:buenavista/widget/navBar.dart';
+import 'package:buenavista/widget/layout/header.dart';
+import 'package:buenavista/widget/layout/responsive.dart';
 import 'package:flutter/material.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -12,33 +12,33 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Navbar(),
-      appBar: AppBar(
-        title: const Text("H O M E"),
-        backgroundColor: MyColor.primariColor,
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          color: MyColor.background,
+    bool isWeb(BuildContext context) => MediaQuery.of(context).size.width>=MyZize.isWeb;
+    return responsive(context, isWeb(context), homeContent(context));
+      /*ListView(children: [
+        header(context),
+        ElevatedButton(
+          onPressed: (){
+            Navigator.pushNamed(context, "/client/home");
+          },
+          child: const Text("home")
         ),
-        child: ListView(children: [
-          header(context),
-          ElevatedButton(
-            onPressed: (){
-              Navigator.pushNamed(context, "/client/home");
-            },
-            child: const Text("home")
-          ),
-          ElevatedButton(
-            onPressed: (){
-              Navigator.pushNamed(context, "/Login");
-            },
-            child: const Text("login")
-          ),  
-        ],
-        ),
-      ),
-    );
+        ElevatedButton(
+          onPressed: (){
+            Navigator.pushNamed(context, "/Login");
+          },
+          child: const Text("login")
+        ),  
+      ],
+      ),*/
   }
+}
+
+Widget homeContent(BuildContext context){
+  return CustomScrollView(
+    slivers: [
+      SliverToBoxAdapter(
+        child: header(context),
+      ),
+    ],
+  );
 }
