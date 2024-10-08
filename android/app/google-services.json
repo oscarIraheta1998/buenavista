@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1046267206023",
+    "project_id": "buenavista-9b6df",
+    "storage_bucket": "buenavista-9b6df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046267206023:android:f518e9f0b7d1d19db49b22",
+        "android_client_info": {
+          "package_name": "com.example.buenavista"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY27DVHwB5xi4YL0RkBFZxePTzBi1ahLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

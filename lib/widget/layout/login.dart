@@ -1,7 +1,11 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-  final _borderRadius=BorderRadius.circular(30);
+final _borderRadius=BorderRadius.circular(30);
+
+Widget loginContent(){
+  return Container();
+}
 
 Widget movileLogin(double S,){
   return Container(

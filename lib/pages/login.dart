@@ -1,10 +1,8 @@
 import 'package:buenavista/system/globalVar.dart';
-import 'package:buenavista/widget/layout/login.dart';
-import 'package:buenavista/widget/navBar.dart';
-import 'package:buenavista/widget/widgetForm.dart';
+import 'package:buenavista/widget/layout/responsive.dart';
 import 'package:flutter/material.dart';
 
-import '../generated/l10n.dart';
+
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -14,6 +12,13 @@ class Login extends StatefulWidget {
 }
 
 class _HomeState extends State<Login> {
+  @override
+  Widget build(BuildContext context) {
+    bool isWeb(BuildContext context) => MediaQuery.of(context).size.width>=MyZize.isWeb;
+    return responsive(context, isWeb(context), loginContent(context));
+  }
+
+  /*
   TextEditingController  emailCtrl = new TextEditingController();
   TextEditingController  passwordCtrl = new TextEditingController();
   GlobalKey<FormState> keyForm= new GlobalKey();
@@ -109,5 +114,20 @@ class _HomeState extends State<Login> {
     );
   }
   save() {
-  }
+  }*/
+}
+
+Widget loginContent(BuildContext context){
+  TextEditingController  emailCtrl = new TextEditingController();
+  TextEditingController  passwordCtrl = new TextEditingController();
+  GlobalKey<FormState> keyFormLogin= new GlobalKey();
+
+  return Container(
+    decoration: const BoxDecoration(
+      image: DecorationImage(
+        image: AssetImage("assets/img/playa02.png"),
+          fit: BoxFit.cover,
+      ),
+    ),
+  );
 }

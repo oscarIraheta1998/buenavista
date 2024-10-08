@@ -2,9 +2,8 @@ import 'package:buenavista/generated/l10n.dart';
 import 'package:buenavista/system/globalVar.dart';
 import 'package:flutter/material.dart';
 
-Widget header(BuildContext context){
+Widget header(BuildContext context, bool web){
   double screenHeigth = MediaQuery.of(context).size.height;
-  bool web(BuildContext context) => MediaQuery.of(context).size.width>=MyZize.isWeb;
   double H = screenHeigth-(screenHeigth/4);
   return Stack(
     children: <Widget>[
@@ -17,7 +16,7 @@ Widget header(BuildContext context){
           ),
         ),
       ),
-      web(context) ? webHeader(context, H) : nombre_hotel(context,)
+      web ? webHeader(context, H) : nombre_hotel(context,)
     ] 
   );
 }
