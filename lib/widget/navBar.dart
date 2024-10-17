@@ -1,4 +1,4 @@
-import 'package:buenavista/system/globalVar.dart';
+import 'package:buenavista/system/global_var.dart';
 import 'package:buenavista/widget/listTile.dart';
 import 'package:flutter/material.dart';
 class Navbar extends StatelessWidget {
@@ -36,7 +36,7 @@ class Navbar extends StatelessWidget {
           ),
           ///////lista del menu////////
           listTile(context, "home",MyColor.sextoColor, const Icon(Icons.home, color: MyColor.sextoColor,),  "/",),
-          listTile(context, "historial",MyColor.sextoColor, const Icon(Icons.flight, color: MyColor.sextoColor,), "",),
+          listTile(context, "reservar Havitacion",MyColor.sextoColor, const Icon(Icons.flight, color: MyColor.sextoColor,), "/reservarHavitacion",),
           listTile(context, "Registar",MyColor.sextoColor, const Icon(Icons.login, color: MyColor.sextoColor,), "/Login",),
           ///////fin lista del menu/////////
         ],

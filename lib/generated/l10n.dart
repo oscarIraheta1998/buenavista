@@ -71,30 +71,30 @@ class S {
   }
 
   /// `SERVICIO DE ALOJAMIENTO`
-  String get Articulo_SERVICIO_DE_ALOJAMIENTO_Titulo {
+  String get Articulo_SERVICIO_Titulo {
     return Intl.message(
       'SERVICIO DE ALOJAMIENTO',
-      name: 'Articulo_SERVICIO_DE_ALOJAMIENTO_Titulo',
+      name: 'Articulo_SERVICIO_Titulo',
       desc: '',
       args: [],
     );
   }
 
   /// `Siempre quisiste una atención especial y en Argueta Hotel la tienes. Disfruta tu estadía, nosotros nos encargamos de todo lo demás. Contamos con comodas habitaciones, sencillas, dobles o triple, donde tendras un verdadero descanso en tu camino /n Puedes realizar tu reserva en nuestro motor de reservas oficial de Argueta Hotel donde obtendras los mejores precios`
-  String get Articulo_SERVICIO_DE_ALOJAMIENTO_informacion {
+  String get Articulo_SERVICIO_informacion {
     return Intl.message(
       'Siempre quisiste una atención especial y en Argueta Hotel la tienes. Disfruta tu estadía, nosotros nos encargamos de todo lo demás. Contamos con comodas habitaciones, sencillas, dobles o triple, donde tendras un verdadero descanso en tu camino /n Puedes realizar tu reserva en nuestro motor de reservas oficial de Argueta Hotel donde obtendras los mejores precios',
-      name: 'Articulo_SERVICIO_DE_ALOJAMIENTO_informacion',
+      name: 'Articulo_SERVICIO_informacion',
       desc: '',
       args: [],
     );
   }
 
   /// `Horario de check-in (flexible), desde las 15:00 horas \n Horario de check-out, hasta las 13:00 horas`
-  String get Articulo_SERVICIO_DE_ALOJAMIENTO_informacion_02 {
+  String get Articulo_SERVICIO_informacion_02 {
     return Intl.message(
       'Horario de check-in (flexible), desde las 15:00 horas \n Horario de check-out, hasta las 13:00 horas',
-      name: 'Articulo_SERVICIO_DE_ALOJAMIENTO_informacion_02',
+      name: 'Articulo_SERVICIO_informacion_02',
       desc: '',
       args: [],
     );

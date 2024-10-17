@@ -3,7 +3,7 @@ import 'package:buenavista/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'system/exportarRutasApp.dart';
+import 'system/exportar_rutas_app.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   /////rutas de la app///////////
   final _routes={
     '/':(context) => const Home(),
-    '/reservar':(context) => const Home(),
+    '/reservarHavitacion':(context) => const Reservaselec(),
     '/Login':(context) => const Login(),
   };
 //////////////////////////////

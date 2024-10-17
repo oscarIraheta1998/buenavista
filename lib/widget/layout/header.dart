@@ -1,99 +1,56 @@
 import 'package:buenavista/generated/l10n.dart';
-import 'package:buenavista/system/globalVar.dart';
+import 'package:buenavista/system/global_var.dart';
 import 'package:flutter/material.dart';
+import 'package:another_carousel_pro/another_carousel_pro.dart';
 
 Widget header(BuildContext context, bool web){
   double screenHeigth = MediaQuery.of(context).size.height;
   double H = screenHeigth-(screenHeigth/4);
   return Stack(
     children: <Widget>[
-      Container(
+      SizedBox(
         height: H,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/img/playa.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-      web ? webHeader(context, H) : nombre_hotel(context,)
-    ] 
-  );
-}
-
-Widget webHeader(BuildContext context, double H){
-  return Stack(
-    children: <Widget>[
-      Container(
-        height: H,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color.fromARGB(234, 0, 0, 0),Colors.transparent],
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            stops: [0.5,5]
-          )
-        ),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              flex: 5,
-              child: Padding(
-                padding: EdgeInsets.all(20),
-                child: Center(
-                  child: nombre_hotel(context),
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 5,
-              child: Container()
-            )
+        child: AnotherCarousel(
+          images: const[
+            ExactAssetImage("assets/img/portada01.png"),
+            ExactAssetImage("assets/img/portada02.png"),
+            ExactAssetImage("assets/img/portada03.png"),
+            ExactAssetImage("assets/img/portada04.png"),
           ],
+          showIndicator: false,
+          borderRadius: false,
+          moveIndicatorFromBottom: 180.0,
+          noRadiusForIndicator: true,
+          overlayShadow: true,
+          overlayShadowColors: MyColor.background,
+          overlayShadowSize: 0.7,
         ),
       ),
-      effect_fading(H),
-    ],
-  );
-}
-
-Widget effect_fading(double H){
-  return Container(
-    height: H,
-    decoration: const BoxDecoration(
-      gradient: LinearGradient(
-        colors: [MyColor.background,Colors.transparent],
-        begin: Alignment.bottomCenter,
-        end: Alignment.topCenter,
-        stops: [0,0.3]
-      )
-    ),
-  );
-}
-Widget nombre_hotel(BuildContext context) {
-  return Center(
-    child: Stack(
-      children: <Widget>[
-        // borde.
-        Text(
-          S.of(context).nombre_hotel,
-          style: TextStyle(
-            fontSize: 40,
-            foreground: Paint()
-              ..style = PaintingStyle.stroke
-              ..strokeWidth = 6
-              ..color = MyColor.primariColor,
-          ),
-        ),
-        // interior
-        Text(
-          S.of(context).nombre_hotel,
-          style: const TextStyle(
-            fontSize: 40,
-            color: MyColor.sextoColor,
-          ),
-        ),
-      ],
-    ),
+      Column(
+        children: [
+          Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: S.of(context).nombre_hotel,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: MyColor.sextoColor,
+                  )
+                ),
+                TextSpan(
+                  text: S.of(context).nombre_hotel,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    color: MyColor.sextoColor,
+                  ),
+                ),
+              ]
+            ),
+          )
+        ],
+      ),
+    ]
   );
 }

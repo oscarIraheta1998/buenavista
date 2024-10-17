@@ -13,3 +13,11 @@ class MyColor{
 class MyZize{
   static double isWeb=800.0;
 }
+
+class DBTablaHabitacion{
+  static const String nombreTabla="habitación";
+  static const String ocupacionMaxima="OcupaciónMáxima";
+  static const String precioPorNoche="PrecioPorNoche";
+  static const String nombre="nombre";
+  static const String numero="numeroHabitación";
+}

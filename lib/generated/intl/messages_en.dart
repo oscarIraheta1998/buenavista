@@ -26,14 +26,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Abierto las 24 horas del dia."),
         "Articulo_Horario_informacion": MessageLookupByLibrary.simpleMessage(
             "Nuestro personal esta simpre dispuesto a brindarte nuestros servicios de calidad calificados con los mejores estandares de calidad, siempre que tu lo necesites los 365 dias del año \n \nBelleza en cada detalle, donde cada rincón está pensado para tu deleite y tu nostalgia. Visítanos y te darás cuenta de lo que te espera"),
-        "Articulo_SERVICIO_DE_ALOJAMIENTO_Titulo":
+        "Articulo_SERVICIO_Titulo":
             MessageLookupByLibrary.simpleMessage("SERVICIO DE ALOJAMIENTO"),
-        "Articulo_SERVICIO_DE_ALOJAMIENTO_informacion":
-            MessageLookupByLibrary.simpleMessage(
-                "Siempre quisiste una atención especial y en Argueta Hotel la tienes. Disfruta tu estadía, nosotros nos encargamos de todo lo demás. Contamos con comodas habitaciones, sencillas, dobles o triple, donde tendras un verdadero descanso en tu camino /n Puedes realizar tu reserva en nuestro motor de reservas oficial de Argueta Hotel donde obtendras los mejores precios"),
-        "Articulo_SERVICIO_DE_ALOJAMIENTO_informacion_02":
-            MessageLookupByLibrary.simpleMessage(
-                "Horario de check-in (flexible), desde las 15:00 horas \n Horario de check-out, hasta las 13:00 horas"),
+        "Articulo_SERVICIO_informacion": MessageLookupByLibrary.simpleMessage(
+            "Siempre quisiste una atención especial y en Argueta Hotel la tienes. Disfruta tu estadía, nosotros nos encargamos de todo lo demás. Contamos con comodas habitaciones, sencillas, dobles o triple, donde tendras un verdadero descanso en tu camino /n Puedes realizar tu reserva en nuestro motor de reservas oficial de Argueta Hotel donde obtendras los mejores precios"),
+        "Articulo_SERVICIO_informacion_02": MessageLookupByLibrary.simpleMessage(
+            "Horario de check-in (flexible), desde las 15:00 horas \n Horario de check-out, hasta las 13:00 horas"),
         "Contrasena": MessageLookupByLibrary.simpleMessage("Contraseña"),
         "iniciar_sesion":
             MessageLookupByLibrary.simpleMessage("iniciar sesión"),

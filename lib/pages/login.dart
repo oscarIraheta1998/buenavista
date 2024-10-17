@@ -1,4 +1,4 @@
-import 'package:buenavista/system/globalVar.dart';
+import 'package:buenavista/system/global_var.dart';
 import 'package:buenavista/widget/layout/responsive.dart';
 import 'package:flutter/material.dart';
 
