@@ -1,39 +1,32 @@
 import 'package:flutter/material.dart';
 
-Widget cartPopularRoom(BuildContext context){
-  return Stack(
-    children: [
-      Positioned(
-        bottom: 0,
-        right: 20,
-        left: 20,
-        child: Container(
-          decoration: BoxDecoration(
+Widget cartPopularRoom(String nombreHabitacion) {
+  return Container(
+    width: 300,
+    height: 150,
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(20)),
+      image: DecorationImage(
+        image: AssetImage("assets/img/portada01.png"),
+        fit: BoxFit.cover,
+      ),
+    ),
+    child: Align(
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: const BoxDecoration(
+          color: Colors.black45,
+        ),
+        child: Text(
+          nombreHabitacion,
+          style: const TextStyle(
             color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black12.withOpacity(0.1),
-                spreadRadius: 15,
-                blurRadius: 5,
-              ),
-            ],
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
-      ClipRRect(
-        borderRadius: BorderRadius.circular(15),
-        child: Container(
-          height: 210,
-          width: MediaQuery.of(context).size.width * 0.75,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            image: const DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage("assets/img/portada01.png")
-            ),
-          ),
-        ),
-      ),
-    ],
+    ),
   );
 }
