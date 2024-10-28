@@ -50,60 +50,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Abierto las 24 horas del dia.`
-  String get Articulo_Horario_Titulo {
-    return Intl.message(
-      'Abierto las 24 horas del dia.',
-      name: 'Articulo_Horario_Titulo',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Nuestro personal esta simpre dispuesto a brindarte nuestros servicios de calidad calificados con los mejores estandares de calidad, siempre que tu lo necesites los 365 dias del año \n \nBelleza en cada detalle, donde cada rincón está pensado para tu deleite y tu nostalgia. Visítanos y te darás cuenta de lo que te espera`
-  String get Articulo_Horario_informacion {
-    return Intl.message(
-      'Nuestro personal esta simpre dispuesto a brindarte nuestros servicios de calidad calificados con los mejores estandares de calidad, siempre que tu lo necesites los 365 dias del año \n \nBelleza en cada detalle, donde cada rincón está pensado para tu deleite y tu nostalgia. Visítanos y te darás cuenta de lo que te espera',
-      name: 'Articulo_Horario_informacion',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `SERVICIO DE ALOJAMIENTO`
-  String get Articulo_SERVICIO_Titulo {
-    return Intl.message(
-      'SERVICIO DE ALOJAMIENTO',
-      name: 'Articulo_SERVICIO_Titulo',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Siempre quisiste una atención especial y en Argueta Hotel la tienes. Disfruta tu estadía, nosotros nos encargamos de todo lo demás. Contamos con comodas habitaciones, sencillas, dobles o triple, donde tendras un verdadero descanso en tu camino /n Puedes realizar tu reserva en nuestro motor de reservas oficial de Argueta Hotel donde obtendras los mejores precios`
-  String get Articulo_SERVICIO_informacion {
-    return Intl.message(
-      'Siempre quisiste una atención especial y en Argueta Hotel la tienes. Disfruta tu estadía, nosotros nos encargamos de todo lo demás. Contamos con comodas habitaciones, sencillas, dobles o triple, donde tendras un verdadero descanso en tu camino /n Puedes realizar tu reserva en nuestro motor de reservas oficial de Argueta Hotel donde obtendras los mejores precios',
-      name: 'Articulo_SERVICIO_informacion',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Horario de check-in (flexible), desde las 15:00 horas \n Horario de check-out, hasta las 13:00 horas`
-  String get Articulo_SERVICIO_informacion_02 {
-    return Intl.message(
-      'Horario de check-in (flexible), desde las 15:00 horas \n Horario de check-out, hasta las 13:00 horas',
-      name: 'Articulo_SERVICIO_informacion_02',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Contraseña`
+  /// `Password`
   String get Contrasena {
     return Intl.message(
-      'Contraseña',
+      'Password',
       name: 'Contrasena',
       desc: '',
       args: [],
@@ -135,6 +85,26 @@ class S {
     return Intl.message(
       'BIENVENIDO ARGUETA HOTEL',
       name: 'nombre_hotel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Popular`
+  String get titulo_popular {
+    return Intl.message(
+      'Popular',
+      name: 'titulo_popular',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Roon`
+  String get titulo_habitacion {
+    return Intl.message(
+      'Roon',
+      name: 'titulo_habitacion',
       desc: '',
       args: [],
     );

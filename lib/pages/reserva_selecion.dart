@@ -2,7 +2,7 @@ import 'package:buenavista/generated/l10n.dart';
 import 'package:buenavista/system/global_var.dart';
 import 'package:buenavista/widget/cart/room.dart';
 import 'package:buenavista/widget/layout/responsive.dart';
-import 'package:buenavista/widget/scroll_horizontal.dart';
+import 'package:buenavista/widget/scroll.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -23,23 +23,29 @@ class _ReservaselecState extends State<Reservaselec> {
 }
 
 Widget contentReservaSelec(BuildContext context) {
-  final ScrollController _scrollController = ScrollController();
-  return Column(
-    children: [
-      menu(context, S.of(context).Articulo_Horario_Titulo),
-      scroll(
-        _scrollController,
-        Axis.horizontal,
-        llamarHabitaciones(context),
+  return CustomScrollView(
+    slivers: [
+      SliverToBoxAdapter(
+        child: menu(context, S.of(context).titulo_popular),
       ),
-      menu(context, S.of(context).Articulo_SERVICIO_Titulo),
-      scroll(
-        _scrollController,
-        Axis.vertical,
-        llamarHabitaciones(context),
+      SliverToBoxAdapter(
+        child: llamarHabitacionesPopular(context),
+      ),
+      SliverToBoxAdapter(
+        child: menu(context, S.of(context).titulo_habitacion),
+      ),
+      SliverToBoxAdapter(
+        child: llamarHabitaciones(context),
       ),
     ],
-  );
+  ); /*Column(
+    children: [
+      menu(context, S.of(context).titulo_popular),
+      llamarHabitacionesPopular(context),
+      menu(context, S.of(context).titulo_habitacion),
+      llamarHabitaciones(context),
+    ],
+  );*/
 }
 
 Widget menu(BuildContext context, String tituloT) {
@@ -60,7 +66,8 @@ Widget menu(BuildContext context, String tituloT) {
   ]);
 }
 
-Widget llamarHabitaciones(BuildContext context) {
+Widget llamarHabitacionesPopular(BuildContext context) {
+  final ScrollController _scrollController = ScrollController();
   return StreamBuilder(
       stream: FirebaseFirestore.instance
           .collection(DBTablaHabitacion.nombreTabla)
@@ -75,25 +82,56 @@ Widget llamarHabitaciones(BuildContext context) {
             child: Text("${snapshot.error}"),
           );
         } else {
-          return ListView.builder(
-            shrinkWrap: true,
-            itemCount: snapshot.data.docs.length,
-            scrollDirection: Axis.vertical,
-            itemBuilder: (BuildContext context, int index) {
-              return cartPopularRoom(
-                  snapshot.data.docs[index][DBTablaHabitacion.nombre]);
-            },
-          ); /*ListView.separated(
-            shrinkWrap: true,
-            itemCount: snapshot.data.docs.length,
-            separatorBuilder: (BuildContext context, int index) {
-              return const Divider();
-            },
-            itemBuilder: (BuildContext context, int index) {
-              return cartPopularRoom(
-                  context, snapshot.data.docs[index][DBTablaHabitacion.nombre]);
-            },
-          );*/
+          return scroll(
+              _scrollController,
+              Axis.horizontal,
+              Row(
+                children: [
+                  for (int i = 0; i < snapshot.data.docs.length; i++)
+                    cardPopularRoom(
+                        snapshot.data.docs[i][DBTablaHabitacion.nombre]),
+                ],
+              ));
         }
       });
+}
+
+Widget llamarHabitaciones(BuildContext context) {
+  final ScrollController _scrollController = ScrollController();
+  return scroll(
+    _scrollController,
+    Axis.vertical,
+    StreamBuilder(
+        stream: FirebaseFirestore.instance
+            .collection(DBTablaHabitacion.nombreTabla)
+            .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (snapshot.hasError) {
+            return Center(
+              child: Text("${snapshot.error}"),
+            );
+          } else {
+            return ListView.separated(
+              shrinkWrap: true,
+              itemCount: snapshot.data.docs.length,
+              separatorBuilder: (BuildContext context, int index) {
+                return const Divider();
+              },
+              itemBuilder: (BuildContext context, int index) {
+                return cardRoom(
+                    context,
+                    snapshot.data.docs[index][DBTablaHabitacion.nombre],
+                    snapshot.data.docs[index][DBTablaHabitacion.precioPorNoche],
+                    snapshot.data.docs[index]
+                        [DBTablaHabitacion.ocupacionMaxima],
+                    snapshot.data.docs[index][DBTablaHabitacion.estado]);
+              },
+            );
+          }
+        }),
+  );
 }

@@ -90,5 +90,5 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 flutter_intl:
   enabled: true
-  class_name: S
+  class_name: s
   main_locate: es
